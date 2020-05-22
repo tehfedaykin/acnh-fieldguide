@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; width:100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.row, .mat-card-content.row {
+  display: flex;
+}
+.grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  mat-card {
+    border-radius: 4px;
+    flex: 1 0 20%; margin: 5px;
+    .header-image {
+      background-size: cover;
+    }
+    img {
+      max-width: 10em;
+    }
+  }
+}
+
+mat-card {
+  img {
+    max-width: 15em;
+  }
+}
+
+.display-availability {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  div {
+    flex: 1 0 25%;
+    border: solid 1px #999;
+    padding: 1.25em .5em;
+    text-align: center;
+    &.available {
+      background: rgb(184, 210, 82);
+    }
+  }
+}
+
+mat-button-toggle-group {
+  display: flex;
+  margin-bottom: 1em;
+  mat-button-toggle {
+    flex: 1 1 0;
+  }
+}
+
+.museum-phrase {
+  margin: 2em;
+}

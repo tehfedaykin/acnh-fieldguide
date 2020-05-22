@@ -1,0 +1,23 @@
+<div class="row">
+  <h1>Fish</h1>
+</div>
+<div class="grid">
+  <mat-card *ngFor="let fish of fishies$ | async" [routerLink]="[fish.id]">
+    <mat-card-header>
+      <mat-card-title>{{fish.name['name-en']}}</mat-card-title>
+      <mat-card-subtitle>{{fish.price | currency}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <img src="{{fish.imageUrl}}" alt="{{fish.name['name-en']}}">
+        <p>"{{fish.catchPhrase}}"</p>
+      </div>
+      <div>
+        <table>
+
+        </table>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+</div>

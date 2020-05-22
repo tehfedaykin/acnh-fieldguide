@@ -1,0 +1,19 @@
+<mat-card *ngIf="villager$ | async as villager">
+  <mat-card-header>
+    <mat-card-title>{{villager.name['name-en']}}</mat-card-title>
+    <mat-card-subtitle>{{villager.species}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="row">
+    <div>
+      <img src="{{villager.imageUrl}}" alt="{{villager.name['name-en']}}">
+      <p>"{{villager.catchPhrase}}"</p>
+    </div>
+    <div>
+      <ul>
+        <li>Personality: {{villager.personality}}</li>
+        <li>Birthday: {{villager.birthdayString}}</li>
+        <li>Gender: {{villager.gender}}</li>
+      </ul>
+    </div>
+  </mat-card-content>
+</mat-card>

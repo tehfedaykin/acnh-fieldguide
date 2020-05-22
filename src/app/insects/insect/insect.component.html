@@ -1,0 +1,31 @@
+<mat-card *ngIf="insect$ | async as insect" color="secondary">
+  <mat-card-header>
+    <mat-card-title>{{insect.name['name-en']}}</mat-card-title>
+    <mat-card-subtitle>{{insect.price | currency }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="row">
+    <div>
+      <img src="{{insect.imageUrl}}" alt="{{insect.name['name-en']}}">
+      <blockquote class="museum-phrase">"{{insect.museumPhrase}}"</blockquote>
+    </div>
+    <div>
+      <p>Location: {{insect.availability.location}}</p>
+      <p>Rarity: {{insect.availability.rarity}}</p>
+      <mat-button-toggle-group name="hemisphere" [value]="selectedHemi | async" aria-label="Hemisphere" color="primary" (change)="selectedHemi.next($event.value)">
+        <mat-button-toggle value="northern">Northern Hemisphere</mat-button-toggle>
+        <mat-button-toggle value="southern">Southern Hemisphere</mat-button-toggle>
+      </mat-button-toggle-group>
+      <div class="table display-availability">
+        <div class="month" *ngFor="let month of displayedSchedule$ | async"  [ngClass]="{'available':month.available}">
+          {{month.month}}
+        </div>
+      </div>
+      <div *ngIf="insect.availability.isAllDay;else limitedHours">
+        <p>The {{insect.name['name-en']}} is available at all times</p>
+      </div>
+      <ng-template #limitedHours>
+        <p>The {{insect.name['name-en']}} is available from {{insect.availability.time}}</p>
+      </ng-template>
+    </div>
+  </mat-card-content>
+</mat-card>

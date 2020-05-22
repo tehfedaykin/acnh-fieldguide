@@ -1,0 +1,23 @@
+<div class="row">
+  <h1>Fossils</h1>
+</div>
+<div class="grid">
+  <mat-card *ngFor="let fossil of fossils$ | async" [routerLink]="[fossil.id]">
+    <mat-card-header>
+      <mat-card-title>{{fossil.name['name-en']}}</mat-card-title>
+      <mat-card-subtitle>{{fossil.price | currency}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <img src="{{fossil.imageUrl}}" alt="{{fossil.name['name-en']}}">
+        <p>"{{fossil.museumPhrase}}"</p>
+      </div>
+      <div>
+        <table>
+
+        </table>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+</div>
