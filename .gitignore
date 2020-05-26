@@ -41,6 +41,9 @@ yarn-error.log
 testem.log
 /typings
 
+/dist.html
+/scully.html
+
 # System Files
 .DS_Store
 Thumbs.db

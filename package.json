@@ -7,7 +7,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "scully": "scully",
+    "scully:serve": "scully serve",
+    "lighthouse-scully": "lighthouse http://localhost:1668/fish/ --output-path=./scully.html",
+    "lighthouse-dist": "lighthouse http://localhost:1864/fish/ --output-path=./dist.html"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +25,11 @@
     "@angular/platform-browser": "~9.0.3",
     "@angular/platform-browser-dynamic": "~9.0.3",
     "@angular/router": "~9.0.3",
+    "@scullyio/init": "0.0.28",
+    "@scullyio/ng-lib": "latest",
+    "@scullyio/scully": "latest",
     "camelcase-keys": "^6.2.2",
+    "ng-lazyload-image": "^7.1.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

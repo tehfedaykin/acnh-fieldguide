@@ -4,12 +4,12 @@
 <div class="grid">
   <mat-card *ngFor="let insect of insects$ | async" [routerLink]="[insect.id]">
     <mat-card-header>
-      <mat-card-title>{{insect.name['name-en']}}</mat-card-title>
+      <mat-card-title>{{insect.name['name-USen']}}</mat-card-title>
       <mat-card-subtitle>{{insect.price | currency}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <div>
-        <img src="{{insect.imageUrl}}" alt="{{insect.name['name-en']}}">
+        <img [lazyLoad]="insect.imageUrl" defaultImage="../../assets/images/bugshadow.png"  alt="{{insect.name['name-USen']}}">
         <p>"{{insect.catchPhrase}}"</p>
       </div>
       <div>

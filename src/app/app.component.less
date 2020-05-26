@@ -1,11 +1,32 @@
+:host {
+  display: flex;
+  min-height: 100%;
+  min-width: 100%;
+  flex-direction: column;
+  background: #DBAD6A;
+}
 mat-toolbar  {
+  flex-shrink: 1;
+  flex-basis: 40px;
+  min-height: 40px;
   .title {
     margin: 0 20px 0 0;
+    a {
+
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
   }
   .nav {
     a {
       margin: 0px 10px;
       color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      &.active {
+        background: #435660;
+      }
     }
   }
 }

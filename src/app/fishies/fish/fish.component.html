@@ -1,11 +1,11 @@
 <mat-card *ngIf="fish$ | async as fish" color="secondary">
   <mat-card-header>
-    <mat-card-title>{{fish.name['name-en']}}</mat-card-title>
+    <mat-card-title>{{fish.name['name-USen']}}</mat-card-title>
     <mat-card-subtitle>{{fish.price | currency }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content class="row">
     <div>
-      <img src="{{fish.imageUrl}}" alt="{{fish.name['name-en']}}">
+      <img src="{{fish.imageUrl}}" alt="{{fish.name['name-USen']}}">
       <blockquote class="museum-phrase">"{{fish.museumPhrase}}"</blockquote>
     </div>
     <div>
@@ -21,10 +21,10 @@
         </div>
       </div>
       <div *ngIf="fish.availability.isAllDay;else limitedHours">
-        <p>The {{fish.name['name-en']}} is available at all times</p>
+        <p>The {{fish.name['name-USen']}} is available at all times</p>
       </div>
       <ng-template #limitedHours>
-        <p>The {{fish.name['name-en']}} is available from {{fish.availability.time}}</p>
+        <p>The {{fish.name['name-USen']}} is available from {{fish.availability.time}}</p>
       </ng-template>
     </div>
   </mat-card-content>

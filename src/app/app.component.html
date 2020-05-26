@@ -1,13 +1,12 @@
 <mat-toolbar color="primary">
-  <div class="title">Animal Crossing Fieldguide</div>
+  <div class="title"><a routerLink="">Animal Crossing Field Guide</a></div>
 
   <!-- This fills the remaining space of the current row -->
   <span class="nav">
-    <a routerLink="villagers">Villagers</a>
-    <a routerLink="fish">Fish</a>
-    <a routerLink="insects">Insects</a>
-    <a routerLink="fossils">Fossils</a>
+    <a routerLink="villagers" routerLinkActive="active">Villagers</a>
+    <a routerLink="fish" routerLinkActive="active">Fish</a>
+    <a routerLink="insects" routerLinkActive="active">Insects</a>
+    <a routerLink="fossils" routerLinkActive="active">Fossils</a>
   </span>
 </mat-toolbar>
-
 <router-outlet></router-outlet>

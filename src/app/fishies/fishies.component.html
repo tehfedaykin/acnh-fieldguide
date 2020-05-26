@@ -4,12 +4,12 @@
 <div class="grid">
   <mat-card *ngFor="let fish of fishies$ | async" [routerLink]="[fish.id]">
     <mat-card-header>
-      <mat-card-title>{{fish.name['name-en']}}</mat-card-title>
+      <mat-card-title>{{fish.name['name-USen']}}</mat-card-title>
       <mat-card-subtitle>{{fish.price | currency}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <div>
-        <img src="{{fish.imageUrl}}" alt="{{fish.name['name-en']}}">
+        <img [lazyLoad]="fish.imageUrl" defaultImage="../../assets/images/fishshadow.png" alt="{{fish.name['name-USen']}}">
         <p>"{{fish.catchPhrase}}"</p>
       </div>
       <div>

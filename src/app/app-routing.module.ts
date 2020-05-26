@@ -7,9 +7,14 @@ import { InsectsComponent } from './insects/insects.component';
 import { FossilsComponent } from './fossils/fossils.component';
 import { FishComponent } from './fishies/fish/fish.component';
 import { InsectComponent } from './insects/insect/insect.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
   {
     path: 'villagers',
     component: VillagersComponent
