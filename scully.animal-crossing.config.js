@@ -8,7 +8,7 @@ exports.config = {
         '/villagers/:id': {
             type: 'json',
             id: {
-                url: 'http://acnhapi.com/villagers',
+                url: "https://acnhapi.com/v1/villagers",
                 property: 'id',
                 resultsHandler: function (res) {
                     return Object.values(res);
@@ -18,7 +18,7 @@ exports.config = {
         '/fish/:id': {
             type: 'json',
             id: {
-                url: 'http://acnhapi.com/fish',
+                url: "https://acnhapi.com/v1/fish",
                 property: 'id',
                 resultsHandler: function (res) {
                     return Object.values(res);
@@ -28,7 +28,7 @@ exports.config = {
         '/insects/:id': {
             type: 'json',
             id: {
-                url: 'http://acnhapi.com/bugs',
+                url: "https://acnhapi.com/v1/bugs",
                 property: 'id',
                 resultsHandler: function (res) {
                     return Object.values(res);

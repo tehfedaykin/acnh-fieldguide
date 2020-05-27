@@ -12,4 +12,27 @@
 <body class="mat-typography">
   <ac-root></ac-root>
 </body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAFG1NAl_49OXCQaELObVD9VgS6K3AFMnU",
+    authDomain: "animalcrossingfieldguide.firebaseapp.com",
+    databaseURL: "https://animalcrossingfieldguide.firebaseio.com",
+    projectId: "animalcrossingfieldguide",
+    storageBucket: "animalcrossingfieldguide.appspot.com",
+    messagingSenderId: "295368515553",
+    appId: "1:295368515553:web:502d8dda45d7dbd999bca0",
+    measurementId: "G-4GQW8E98EC"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 </html>

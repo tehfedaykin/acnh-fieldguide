@@ -10,6 +10,7 @@ export interface Villager {
   species: string;
   gender: string;
   catchPhrase: string;
+  imageUrl: string;
 }
 
 export enum Locations {
@@ -53,6 +54,7 @@ export interface Creature {
   catchPhrase: string;
   museumPhrase: string;
   uiSchedule: Schedule;
+  imageUrl: string;
 }
 
 export interface Fish extends Creature {

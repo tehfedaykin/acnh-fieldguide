@@ -8,7 +8,7 @@ export const config: ScullyConfig = {
     '/villagers/:id': {
       type: 'json',
       id: {
-        url: 'http://acnhapi.com/villagers',
+        url: `https://acnhapi.com/v1/villagers`,
         property: 'id',
         resultsHandler: (res) => {
           return Object.values(res);
@@ -18,7 +18,7 @@ export const config: ScullyConfig = {
     '/fish/:id': {
       type: 'json',
       id: {
-        url: 'http://acnhapi.com/fish',
+        url: `https://acnhapi.com/v1/fish`,
         property: 'id',
         resultsHandler: (res) => {
           return Object.values(res);
@@ -28,10 +28,10 @@ export const config: ScullyConfig = {
     '/insects/:id': {
       type: 'json',
       id: {
-        url: 'http://acnhapi.com/bugs',
+        url: `https://acnhapi.com/v1/bugs`,
         property: 'id',
         resultsHandler: (res) => {
-          return Object.values(res)
+          return Object.values(res);
         }
       }
     }

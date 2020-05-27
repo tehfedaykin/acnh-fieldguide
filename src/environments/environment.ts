@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://acnhapi.com/v1'
+  apiUrl: 'https://acnhapi.com/v1'
 };
 
 /*
