@@ -4,18 +4,13 @@
 <div class="grid">
   <mat-card *ngFor="let fossil of fossils$ | async" [routerLink]="[fossil.id]">
     <mat-card-header>
-      <mat-card-title>{{fossil.name['name-en']}}</mat-card-title>
+      <mat-card-title>{{fossil.name['name-USen']}}</mat-card-title>
       <mat-card-subtitle>{{fossil.price | currency}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <div>
-        <img src="{{fossil.imageUrl}}" alt="{{fossil.name['name-en']}}">
+        <img src="{{fossil.imageUri}}" alt="{{fossil.name['name-USen']}}">
         <p>"{{fossil.museumPhrase}}"</p>
-      </div>
-      <div>
-        <table>
-
-        </table>
       </div>
 
     </mat-card-content>

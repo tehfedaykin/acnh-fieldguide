@@ -4,13 +4,13 @@
 <div class="grid">
   <mat-card class="villager-card" *ngFor="let villager of villagers$ | async" [routerLink]="[villager.id]">
     <mat-card-header>
-      <div mat-card-avatar class="header-image" style="background-image: url({{villager.imageUrl}})"></div>
+      <div mat-card-avatar class="header-image" style="background-image: url({{villager.iconUri}})"></div>
       <mat-card-title>{{villager.name['name-en']}}</mat-card-title>
       <mat-card-subtitle>{{villager.species}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-title></mat-card-title>
     <mat-card-content>
-      <img src="{{villager.imageUrl}}" alt="{{villager.name['name-en']}}">
+      <img src="{{villager.imageUri}}" alt="{{villager.name['name-en']}}">
       <p>"{{villager.catchPhrase}}"</p>
     </mat-card-content>
   </mat-card>

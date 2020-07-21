@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Observer } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as camelcaseKeys from '../../node_modules/camelcase-keys';
-import { Villager } from './acnh';
+import { Villager, Fish, Insect, Fossil } from './acnh';
+import { environment } from 'src/environments/environment';
 
 const months = [
   {
@@ -64,36 +65,33 @@ export class AcnhService {
   constructor(private http: HttpClient) { }
 
   getVillagers(): Observable<Villager[]> {
-    return this.http.get<Villager[]>('http://acnhapi.com/villagers').pipe(
+    return this.http.get<Villager[]>(`${environment.apiUrl}/villagers`).pipe(
       map((res) => {
-        return Object.values(res).map((villager) => {
+        return res.map((villager) => {
           return {
-            ...camelcaseKeys(villager),
-            imageUrl: `http://acnhapi.com/images/villagers/${villager.id}`
-          };
+            ...camelcaseKeys(villager)
+          }
         })
       })
     );
   }
 
   getVillager(id: string): Observable<Villager> {
-    return this.http.get(`http://acnhapi.com/villagers/${id}`).pipe(
+    return this.http.get(`${environment.apiUrl}/villagers/${id}`).pipe(
       map((res: any) => {
         return {
-          ...camelcaseKeys(res),
-          imageUrl: `http://acnhapi.com/images/villagers/${res.id}`
+          ...camelcaseKeys(res)
         };
       })
     );
   }
 
-  getFishies() {
-    return this.http.get('http://acnhapi.com/fish').pipe(
-      map((res) => {
-        return Object.values(res).map((fish) => {
+  getFishies(): Observable<Fish[]> {
+    return this.http.get(`${environment.apiUrl}/fish`).pipe(
+      map((res: any) => {
+        return res.map((fish) => {
           return {
-            ...camelcaseKeys(fish),
-            imageUrl: `http://acnhapi.com/images/fish/${fish.id}`
+            ...camelcaseKeys(fish)
           };
         })
       })
@@ -101,11 +99,10 @@ export class AcnhService {
   }
 
   getFish(id: string) {
-    return this.http.get(`http://acnhapi.com/fish/${id}`).pipe(
+    return this.http.get(`${environment.apiUrl}/fish/${id}`).pipe(
       map((res: any) => {
         return {
           ...camelcaseKeys(res),
-          imageUrl: `http://acnhapi.com/images/fish/${res.id}`,
           uiSchedule: {
             northern: this.buildSchedule(res.availability, 'northern'),
             southern: this.buildSchedule(res.availability, 'southern')
@@ -115,25 +112,23 @@ export class AcnhService {
     );
   }
 
-  getInsects() {
-    return this.http.get('http://acnhapi.com/bugs').pipe(
-      map((res) => {
-        return Object.values(res).map((bug) => {
+  getInsects(): Observable<Insect[]> {
+    return this.http.get(`${environment.apiUrl}/bugs`).pipe(
+      map((res: any) => {
+        return res.map((bug) => {
           return {
-            ...camelcaseKeys(bug),
-            imageUrl: `http://acnhapi.com/images/bugs/${bug.id}`,
+            ...camelcaseKeys(bug)
           };
         })
       })
     );
   }
 
-  getInsect(id: string) {
-    return this.http.get(`http://acnhapi.com/bugs/${id}`).pipe(
+  getInsect(id: string): Observable<Insect> {
+    return this.http.get(`${environment.apiUrl}/bugs/${id}`).pipe(
       map((res: any) => {
         return {
           ...camelcaseKeys(res),
-          imageUrl: `http://acnhapi.com/images/bugs/${res.id}`,
           uiSchedule: {
             northern: this.buildSchedule(res.availability, 'northern'),
             southern: this.buildSchedule(res.availability, 'southern')
@@ -143,15 +138,24 @@ export class AcnhService {
     );
   }
 
-  getFossils() {
-    return this.http.get('http://acnhapi.com/fossils').pipe(
-      map((res) => {
-        return Object.values(res).map((fossil) => {
+  getFossils(): Observable<Fossil[]> {
+    return this.http.get(`${environment.apiUrl}/fossils`).pipe(
+      map((res: any) => {
+        return res.map((fossil) => {
           return {
             ...camelcaseKeys(fossil),
-            imageUrl: `http://acnhapi.com/images/fossils/${fossil['file-name']}`
           };
         })
+      })
+    );
+  }
+
+  getFossil(id:string): Observable<Fossil> {
+    return this.http.get(`${environment.apiUrl}/fossils/${id}`).pipe(
+      map((res: any) => {
+          return {
+            ...camelcaseKeys(res),
+          };
       })
     );
   }

@@ -1,15 +1,32 @@
+export interface Name {
+  'name-USen': string;
+  'name-EUen': string;
+  'name-EUde': string;
+  'name-EUes': string;
+  'name-USes': string;
+  'name-EUfr': string;
+  'name-USfr': string;
+  'name-EUit': string;
+  'name-EUnl': string;
+  'name-CNzh': string;
+  'name-TWzh': string;
+  'name-JPja': string;
+  'name-KRko': string;
+  'name-EUru': string;
+}
+
 export interface Villager {
   id: number;
   fileName: string;
-  name: {
-    'name-en': string;
-  };
+  name: Name;
   personality: string;
   birthdayString: string;
   birthday: string;
   species: string;
   gender: string;
   catchPhrase: string;
+  iconUri: string;
+  imageUri: string;
 }
 
 export enum Locations {
@@ -32,6 +49,8 @@ export interface Availability {
   'rarity': string;
 }
 
+
+
 export interface Month {
   month: string;
   available: boolean;
@@ -45,9 +64,7 @@ interface Schedule {
 export interface Creature {
   id: number;
   fileName: string;
-  name: {
-    'name-en': string;
-  };
+  name: Name;
   availability: Availability;
   price: string;
   catchPhrase: string;
@@ -62,4 +79,12 @@ export interface Fish extends Creature {
 
 export interface Insect extends Creature {
   priceFlick: string;
+}
+
+export interface Fossil {
+  fileName: string;
+  name: Name;
+  price: number;
+  museumPhrase: string;
+  imageUri: string;
 }
