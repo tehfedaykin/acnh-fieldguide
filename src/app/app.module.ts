@@ -4,6 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatButtonModule} from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,7 +39,7 @@ import { InsectComponent } from './insects/insect/insect.component';
     MatToolbarModule,
     MatCardModule,
     MatSlideToggleModule,
-    MatButtonToggleModule
+    MatButtonToggleModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

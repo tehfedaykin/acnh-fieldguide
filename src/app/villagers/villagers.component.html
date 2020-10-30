@@ -1,11 +1,16 @@
 <div class="row">
   <h1>Villagers</h1>
+  <button (click)="sortVillagers()">Sort Villagers</button>
 </div>
 <div class="grid">
-  <mat-card class="villager-card" *ngFor="let villager of villagers$ | async" [routerLink]="[villager.id]">
+  <ng-container #villagerContainer></ng-container>
+</div>
+
+<ng-template #villagerTemplate let-villager="villager">
+  <mat-card class="villager-card" [routerLink]="[villager.id]">
     <mat-card-header>
       <div mat-card-avatar class="header-image" style="background-image: url({{villager.iconUri}})"></div>
-      <mat-card-title>{{villager.name['name-en']}}</mat-card-title>
+      <mat-card-title>{{villager.name['name-EUes']}}</mat-card-title>
       <mat-card-subtitle>{{villager.species}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-title></mat-card-title>
@@ -14,5 +19,5 @@
       <p>"{{villager.catchPhrase}}"</p>
     </mat-card-content>
   </mat-card>
-</div>
+</ng-template>
 
