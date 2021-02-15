@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { AcnhService } from 'src/app/acnh.service';
 import { switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { Villager } from 'src/app/acnh';
 
 @Component({
   selector: 'ac-villager',
@@ -9,7 +11,7 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./villager.component.less']
 })
 export class VillagerComponent implements OnInit {
-  public villager$;
+  public villager$: Observable<Villager>;
   constructor(private route: ActivatedRoute, private acnhService: AcnhService) { }
 
   ngOnInit(): void {

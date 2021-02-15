@@ -4,7 +4,7 @@
 <div class="grid">
   <mat-card *ngFor="let insect of insects$ | async" [routerLink]="[insect.id]">
     <mat-card-header>
-      <mat-card-title>{{insect.name['name-USenn']}}</mat-card-title>
+      <mat-card-title>{{insect.name['name-USen']}}</mat-card-title>
       <mat-card-subtitle>{{insect.price | currency}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
