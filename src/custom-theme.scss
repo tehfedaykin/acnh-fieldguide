@@ -26,3 +26,11 @@ $animal-crossing-theme: mat-light-theme($animal-crossing-primary, $animal-crossi
 // that you are using.
 @include angular-material-theme($animal-crossing-theme);
 
+$custom-typography: mat-typography-config(
+  $font-family: 'Arvo, monospace',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+@include angular-material-typography($custom-typography);
+
