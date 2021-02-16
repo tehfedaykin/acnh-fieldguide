@@ -8,7 +8,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VillagersComponent } from './villagers/villagers.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VillagerComponent } from './villagers/villager/villager.component';
 import { FishiesComponent } from './fishies/fishies.component';
@@ -17,6 +17,7 @@ import { InsectsComponent } from './insects/insects.component';
 import { FossilsComponent } from './fossils/fossils.component';
 import { CommonModule } from '@angular/common';
 import { InsectComponent } from './insects/insect/insect.component';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { InsectComponent } from './insects/insect/insect.component';
     MatToolbarModule,
     MatCardModule,
     MatSlideToggleModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    ScullyLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]

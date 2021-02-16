@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import * as camelcaseKeys from '../../node_modules/camelcase-keys';
 import { Villager, Fish, Insect, Fossil } from './acnh';
 import { environment } from 'src/environments/environment';
+import { TransferStateService } from '@scullyio/ng-lib';
 
 const months = [
   {
@@ -62,28 +63,36 @@ const months = [
 })
 export class AcnhService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient, 
+    private transferState: TransferStateService
+    ) { }
 
   getVillagers(): Observable<Villager[]> {
-    return this.http.get<Villager[]>(`${environment.apiUrl}/villagers`).pipe(
-      map((res) => {
-        return res.map((villager) => {
-          return {
-            ...camelcaseKeys(villager)
-          }
+    return this.transferState.useScullyTransferState(
+      'villagers',
+      this.http.get<Villager[]>(`${environment.apiUrl}/villagers`).pipe(
+        map((res) => {
+          return res.map((villager) => {
+            return {
+              ...camelcaseKeys(villager)
+            }
+          })
         })
-      })
-    );
+      ))
   }
 
   getVillager(id: string): Observable<Villager> {
-    return this.http.get(`${environment.apiUrl}/villagers/${id}`).pipe(
-      map((res: any) => {
-        return {
-          ...camelcaseKeys(res)
-        };
-      })
-    );
+    return this.transferState.useScullyTransferState(
+      `villager-${id}`,
+      this.http.get(`${environment.apiUrl}/villagers/${id}`).pipe(
+        map((res: any) => {
+          return {
+            ...camelcaseKeys(res)
+          };
+        })
+      )
+    )
   }
 
   getFishies(): Observable<Fish[]> {
