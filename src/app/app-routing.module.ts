@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { VillagersComponent } from './villagers/villagers.component';
@@ -10,6 +11,10 @@ import { InsectComponent } from './insects/insect/insect.component';
 
 
 const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
   {
     path: 'villagers',
     component: VillagersComponent

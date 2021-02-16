@@ -18,6 +18,7 @@ import { FossilsComponent } from './fossils/fossils.component';
 import { CommonModule } from '@angular/common';
 import { InsectComponent } from './insects/insect/insect.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
     InsectsComponent,
     FossilsComponent,
     FishiesComponent,
-    InsectComponent
+    InsectComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
