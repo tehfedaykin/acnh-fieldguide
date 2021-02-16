@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-html, body { height: 100%; width:100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%; width:100%; font-family: Arvo, "Helvetica Neue", sans-serif;}
+body { margin: 0; }
+
 
 .row, .mat-card-content.row {
   display: flex;
@@ -13,6 +15,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   mat-card {
     border-radius: 4px;
     flex: 1 0 20%; margin: 5px;
+    background: #d0ce7c;
+    border-radius: 4px;
+    cursor: pointer;
     .header-image {
       background-size: cover;
     }
@@ -23,6 +28,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 mat-card {
+  background: #d0ce7c;
+  margin: 5em;
   img {
     max-width: 15em;
   }
