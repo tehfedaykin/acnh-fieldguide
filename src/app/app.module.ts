@@ -17,6 +17,7 @@ import { InsectsComponent } from './insects/insects.component';
 import { FossilsComponent } from './fossils/fossils.component';
 import { CommonModule } from '@angular/common';
 import { InsectComponent } from './insects/insect/insect.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { InsectComponent } from './insects/insect/insect.component';
     InsectsComponent,
     FossilsComponent,
     FishiesComponent,
-    InsectComponent
+    InsectComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
